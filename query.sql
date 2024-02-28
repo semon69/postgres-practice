@@ -11,16 +11,16 @@ VALUES (
         'John', 'Doe', 25, 'A', 'Mathematics', 'john.doe@example.com', '1999-05-15', 'O+', 'USA'
     ),
     (
-        'Jane', 'Smith', 28, 'B', 'Physics', 'jane.smith@example.com', '1996-10-20', 'A-', 'Canada'
+        'Jane', 'Smith', 28, 'B', 'Physics', 'jane.smith@example.com', '1996-10-20', 'A-', 'USA'
     ),
     (
         'Alice', 'Johnson', 22, 'C', 'Chemistry', 'alice.johnson@example.com', '2000-03-10', 'B+', 'UK'
     ),
     (
-        'Bob', 'Brown', 30, 'A', 'Biology', 'bob.brown@example.com', '1992-07-25', 'AB-', 'Australia'
+        'Bob', 'Brown', 30, 'A', 'Biology', 'bob.brown@example.com', '1992-07-25', 'AB-', 'UK'
     ),
     (
-        'Emily', 'Williams', 27, 'B', 'History', 'emily.williams@example.com', '1995-09-18', 'O-', 'Germany'
+        'Emily', 'Williams', 27, 'B', 'History', 'emily.williams@example.com', '1995-09-18', 'O-', 'UK'
     ),
     (
         'Michael', 'Anderson', 29, 'A', 'Computer Science', 'michael.anderson@example.com', '1993-12-05', 'A+', 'France'
@@ -69,9 +69,38 @@ VALUES (
     );
 
 
+SELECT * FROM student
+
+
 SELECT * FROM student ORDER BY age ASC
 
 SELECT DISTINCT blood_group FROM student
 
 SELECT * FROM student
     WHERE  age < 25 and course = 'Dance'
+
+
+
+
+SELECT length(first_name) FROM student  --SCALAR
+
+SELECT sum(age) from student --aggregate
+
+SELECT * from student 
+    WHERE grade IN('B', 'C')
+
+SELECT * from student 
+    WHERE age BETWEEN 28 and 30;
+
+
+SELECT * from student 
+    WHERE first_name LIKE ('%e');
+
+SELECT * from student 
+    WHERE first_name ILIKE ('e%');
+
+SELECT * FROM student LIMIT 5 OFFSET 3
+
+
+
+DELETE from student WHERE grade = 'C'
