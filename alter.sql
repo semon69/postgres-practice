@@ -20,4 +20,12 @@ ALTER TABLE person2
 ALTER TABLE person2
     ALTER COLUMN person_age set NOT NULL
 
+
+ALTER TABLE person2
+    ADD constraint unique_person2_person_age UNIQUE(person_age);
+
+UPDATE person2
+SET person_age = 46
+WHERE person_id = 3;
+
 -- INSERT INTO person2 VALUES(7, 'dd@gmail.com', 23, 'admin69')
