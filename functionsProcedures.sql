@@ -31,3 +31,16 @@ $$
 SELECT delete_emp();
 
 SELECT delete_emp_with_p(29);
+
+
+CREATE Procedure remove_emp_id()
+LANGUAGE plpgsql
+AS
+$$
+    BEGIN
+        DELETE FROM employees WHERE employee_id = 27;
+    END
+$$
+
+
+call remove_emp_id()
